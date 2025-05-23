@@ -4,6 +4,7 @@ gitsigns.setup {
   preview_config = {
     border = 'rounded',
   },
+  word_diff = true,
   on_attach = function(bufnr)
     local function map(mode, l, r, opts)
       opts = opts or {}

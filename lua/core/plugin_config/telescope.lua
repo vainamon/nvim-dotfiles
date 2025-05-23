@@ -32,7 +32,7 @@ local function grep_visual_selection()
   vim.cmd('Telescope live_grep default_text=' .. visual_selection)
 end
 
-vim.keymap.set('n', '<C-f>', builtin.find_files, { desc = 'Find files by name' })
+vim.keymap.set('n', '<Space>lf', builtin.find_files, { desc = 'Find files by name' })
 vim.keymap.set('n', '<Space><Space>', builtin.oldfiles, { desc = 'Show recently used files list' })
 vim.keymap.set('n', '<Space>lg', ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
   { desc = 'Run live grep search' })

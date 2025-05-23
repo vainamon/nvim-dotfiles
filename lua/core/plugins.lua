@@ -49,6 +49,7 @@ require("lazy").setup({
       },
     },
   },
+  "sindrets/diffview.nvim",
   -- completion
   "hrsh7th/nvim-cmp",
   "hrsh7th/cmp-nvim-lsp",

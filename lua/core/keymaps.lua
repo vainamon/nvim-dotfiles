@@ -18,6 +18,9 @@ vim.keymap.set('n', '<A-n>', '<Plug>(YankyNextEntry)', { desc = 'Paste next entr
 
 vim.keymap.set('n', '<Leader>s', '<cmd>ClangdSwitchSourceHeader<cr>', { desc = 'Switch between source and header files' })
 
+vim.keymap.set('n', '<C-w>c', ':tabclose<CR>', { desc = 'Close current tab' })
+vim.keymap.set('n', '<C-w>t', ':tabnew<CR>', { desc = 'Open new tab' })
+
 -- terminal toggle function
 local term_buf = nil
 local term_win = nil
