@@ -13,21 +13,21 @@ gitsigns.setup {
     end
 
     -- Navigation
-    map('n', ']c', function()
+    map('n', ']h', function()
       if vim.wo.diff then
-        vim.cmd.normal({ ']c', bang = true })
+        vim.cmd.normal({ ']h', bang = true })
       else
         gitsigns.nav_hunk('next')
       end
-    end)
+    end, { desc = 'Git jump to next hunk' } )
 
-    map('n', '[c', function()
+    map('n', '[h', function()
       if vim.wo.diff then
-        vim.cmd.normal({ '[c', bang = true })
+        vim.cmd.normal({ '[h', bang = true })
       else
         gitsigns.nav_hunk('prev')
       end
-    end)
+    end, { desc = 'Git jump to prev hunk' })
 
     -- Actions
     map('n', '<Leader>hs', gitsigns.stage_hunk, { desc = 'Git stage hunk' })

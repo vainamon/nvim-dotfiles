@@ -20,26 +20,6 @@ vim.diagnostic.config {
   },
 }
 
--- set quickfix list from diagnostics in a certain buffer, not the whole workspace
-local set_qflist = function(buf_num, severity)
-  local diagnostics = nil
-  diagnostics = vim.diagnostic.get(buf_num, { severity = severity })
-
-  local qf_items = vim.diagnostic.toqflist(diagnostics)
-  vim.fn.setqflist({}, " ", { title = "Diagnostics", items = qf_items })
-
-  -- open quickfix by default
-  vim.cmd([[copen]])
-end
-
--- this puts diagnostics from opened files to quickfix
-vim.keymap.set('n', '<Space>qw', vim.diagnostic.setqflist, { desc = "Put window diagnostics to qf" })
-
--- this puts diagnostics from current buffer to quickfix
-vim.keymap.set('n', '<Space>qb', function()
-  set_qflist(0)
-end, { desc = "Put buffer diagnostics to qf" })
-
 -- automatically show diagnostic in float win for current line
 vim.api.nvim_create_autocmd("CursorHold", {
   pattern = "*",

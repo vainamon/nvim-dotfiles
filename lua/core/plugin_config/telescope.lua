@@ -1,3 +1,5 @@
+local open_with_trouble = require('trouble.sources.telescope').open
+
 require('telescope').setup({
   defaults = {
     layout_strategy = "flex",
@@ -11,6 +13,10 @@ require('telescope').setup({
     grep_previewer = require 'telescope.previewers'.vim_buffer_vimgrep.new,
     qflist_previewer = require 'telescope.previewers'.vim_buffer_qflist.new,
     path_display = { "truncate" },
+    mappings = {
+      i = { ['<C-t>'] = open_with_trouble },
+      n = { ['<C-t>'] = open_with_trouble },
+    },
   },
   file_ignore_patterns = { "node%_modules/.*" }
 })

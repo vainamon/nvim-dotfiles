@@ -119,8 +119,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<Space>rn', vim.lsp.buf.rename, opts)
     opts.desc = 'Select a code action';
     vim.keymap.set({ 'n', 'v' }, '<Space>ca', vim.lsp.buf.code_action, opts)
-    opts.desc = 'List all symbol references';
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
     opts.desc = 'Format buffer';
     vim.keymap.set('n', '<Space>f', function()
       vim.lsp.buf.format { async = true }

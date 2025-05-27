@@ -41,7 +41,7 @@ require("lazy").setup({
     },
     keys = {
       {
-        "<leader>?",
+        "<Leader>?",
         function()
           require("which-key").show({ global = false })
         end,
@@ -50,6 +50,14 @@ require("lazy").setup({
     },
   },
   "sindrets/diffview.nvim",
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
   -- completion
   "hrsh7th/nvim-cmp",
   "hrsh7th/cmp-nvim-lsp",
